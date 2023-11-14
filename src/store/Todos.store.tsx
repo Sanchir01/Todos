@@ -19,11 +19,11 @@ export const todoStore = create<ITodoStore>()(
 				},
 				updateTodo: (id: string) => {
 					const { allTodo } = get()
-
+					const myIndex = allTodo.find(todo => todo.id === id)
 					set({
 						allTodo: allTodo.map(item => ({
 							...item,
-							isChecked: item.id === id ? true : false
+							isChecked: item.id === id ? !myIndex?.isChecked : item.isChecked
 						}))
 					})
 				}

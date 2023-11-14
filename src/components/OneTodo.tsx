@@ -16,7 +16,7 @@ const OneTodo: FC = () => {
 							<p>
 								{item.todo} {item.isChecked === true ? 'Выполненный' : 'Новый'}
 							</p>
-							<button onClick={() => updateTodo(item.id)}>обновить</button>
+							<input onChange={() => updateTodo(item.id)} type='checkbox' />
 						</div>
 					))}
 				</div>
